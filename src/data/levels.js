@@ -1,6 +1,6 @@
 // Urutan level belajar, dari paling dasar sampai siap kerja.
 export const levels = [
-  { id: 'pemula', color: '#16a34a', name: 'Pemula', en: 'Beginner', icon: '🌱', desc: 'Belum pernah ngoding. Mulai dari tools dan dasar Python.' },
+  { id: 'pemula', color: '#059669', name: 'Pemula', en: 'Beginner', icon: '🌱', desc: 'Belum pernah ngoding. Mulai dari tools dan dasar Python.' },
   { id: 'menengah', color: '#0284c7', name: 'Menengah', en: 'Intermediate', icon: '🌿', desc: 'Sudah bisa Python dasar. Belajar kode rapi, matematika, dan mengolah data.' },
   { id: 'mahir', color: '#d97706', name: 'Mahir', en: 'Advanced', icon: '🌳', desc: 'Membuat model sendiri: machine learning dan deep learning.' },
   { id: 'ahli', color: '#e11d48', name: 'Ahli', en: 'Expert', icon: '🚀', desc: 'Spesialisasi: bahasa, gambar, dan LLM / Generative AI.' },

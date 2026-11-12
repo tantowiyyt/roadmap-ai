@@ -51,11 +51,11 @@ export default function KamusPage({ istilahId, onOpenTopic }) {
       </div>
 
       <div className="filters">
-        <input type="search" placeholder="Cari istilah… (mis. overfitting, embedding, gradien)" value={cari} onChange={(e) => setCari(e.target.value)} />
-        <div className="chips">
-          {['Semua', ...kategoriIstilah].map((c) => (
-            <button key={c} className={`chip ${kat === c ? 'active' : ''}`} onClick={() => setKat(c)}>{c}</button>
-          ))}
+        <div className="filter-bar">
+          <input type="search" placeholder="Cari istilah… (mis. overfitting, embedding, gradien)" value={cari} onChange={(e) => setCari(e.target.value)} />
+          <select className="filter-select" aria-label="Kategori" value={kat} onChange={(e) => setKat(e.target.value)}>
+            {['Semua', ...kategoriIstilah].map((c) => <option key={c} value={c}>{c === 'Semua' ? 'Semua kategori' : c}</option>)}
+          </select>
         </div>
         <div className="kamus-bar">
           <label className="saklar">

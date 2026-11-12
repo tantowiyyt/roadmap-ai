@@ -86,24 +86,20 @@ function AlgoList() {
       </section>
 
       <div className="filters">
-        <input
-          type="search"
-          placeholder="Cari algoritma atau kegunaan… (mis. spam, gambar, harga)"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <div className="chips">
-          {['Semua', ...categories].map((c) => (
-            <button key={c} className={`chip ${cat === c ? 'active' : ''}`} onClick={() => setCat(c)}>{c}</button>
-          ))}
-        </div>
-        <div className="chips">
-          <button className={`chip ${lvl === 'semua' ? 'active' : ''}`} onClick={() => setLvl('semua')}>Semua level</button>
-          {algoLevelList.map((l) => (
-            <button key={l.id} className={`chip ${lvl === l.id ? 'active' : ''}`} onClick={() => setLvl(l.id)}>
-              {l.icon} {l.name} <span className="muted">({l.en})</span>
-            </button>
-          ))}
+        <div className="filter-bar">
+          <input
+            type="search"
+            placeholder="Cari algoritma atau kegunaan… (mis. spam, gambar, harga)"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <select className="filter-select" aria-label="Kategori" value={cat} onChange={(e) => setCat(e.target.value)}>
+            {['Semua', ...categories].map((c) => <option key={c} value={c}>{c === 'Semua' ? 'Semua kategori' : c}</option>)}
+          </select>
+          <select className="filter-select" aria-label="Level" value={lvl} onChange={(e) => setLvl(e.target.value)}>
+            <option value="semua">Semua level</option>
+            {algoLevelList.map((l) => <option key={l.id} value={l.id}>{l.icon} {l.name} ({l.en})</option>)}
+          </select>
         </div>
       </div>
 

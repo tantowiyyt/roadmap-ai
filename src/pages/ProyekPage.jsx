@@ -110,21 +110,16 @@ function DaftarProyek({ tahapAwal, selesai }) {
   return (
     <>
       <div className="filters">
-        <input type="search" placeholder="Cari proyek… (mis. cuaca, gambar, survei, SQL)" value={cari} onChange={(e) => setCari(e.target.value)} />
-        <div className="chips">
-          <button className={`chip ${lvl === 'semua' ? 'active' : ''}`} onClick={() => { setLvl('semua'); setTahap(null) }}>Semua level</button>
-          {levels.map((l) => (
-            <button key={l.id} className={`chip ${lvl === l.id ? 'active' : ''}`} onClick={() => { setLvl(l.id); setTahap(null) }}>
-              {l.icon} {l.name}
-            </button>
-          ))}
-        </div>
-        <div className="chips">
-          <span className="muted small">Data dari:</span>
-          <button className={`chip ${cara === 'semua' ? 'active' : ''}`} onClick={() => setCara('semua')}>Semua</button>
-          {Object.entries(caraDataset).map(([k, v]) => (
-            <button key={k} className={`chip ${cara === k ? 'active' : ''}`} onClick={() => setCara(k)}>{v.icon} {v.label}</button>
-          ))}
+        <div className="filter-bar">
+          <input type="search" placeholder="Cari proyek… (mis. cuaca, gambar, survei, SQL)" value={cari} onChange={(e) => setCari(e.target.value)} />
+          <select className="filter-select" aria-label="Level" value={lvl} onChange={(e) => { setLvl(e.target.value); setTahap(null) }}>
+            <option value="semua">Semua level</option>
+            {levels.map((l) => <option key={l.id} value={l.id}>{l.icon} {l.name}</option>)}
+          </select>
+          <select className="filter-select" aria-label="Sumber data" value={cara} onChange={(e) => setCara(e.target.value)}>
+            <option value="semua">Semua sumber data</option>
+            {Object.entries(caraDataset).map(([k, v]) => <option key={k} value={k}>{v.icon} {v.label}</option>)}
+          </select>
         </div>
         <p className="muted small proyek-info">
           {tahap && <>Tahap <strong>{tahapById[tahap].title}</strong> · <button className="link" onClick={() => setTahap(null)}>tampilkan semua tahap</button> · </>}

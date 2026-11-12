@@ -305,6 +305,70 @@ _Terakhir diperbarui: 12 November 2026_
 - Materi dibuka dengan `goTo(tahap, materi)`; lainnya lewat hash (`#/algoritma/<id>`, `#/kamus/<id>`, `#/proyek/<id>`).
 - Dicek pengguna: berhasil.
 
+## Tampilan "buku pelajaran" (12 November 2026) ✅
+- Permintaan: tampilan lama terasa "AI-slop" (banner gradien ungu-pink, lingkaran dekorasi, tab pil, bayangan di semua kartu).
+  Emoji **sengaja dipertahankan** (pilihan pengguna).
+- Token warna di `:root` (styles.css): kertas `--bg #f6f3ea`, halaman `--card #fffdf7`, tinta `--text #1f1d18`, satu aksen
+  hijau tua `--accent #1d6b4c` (gelap: `#79c29d` di atas `#191815`). Bayangan (`--shadow*`) = none, `--radius` = 6px.
+- Judul memakai **Source Serif 4** (`--font-head`, Google Fonts di index.html; Plus Jakarta Sans dihapus). Teks tetap Inter.
+- Bagian "Tema visual" di styles.css ditulis ulang: kepala halaman tanpa banner (garis ganda di bawah, progres berupa garis tipis
+  `.hero-bar` di App.jsx, bukan cincin), tab bergaris bawah, sidebar seperti daftar isi, daftar materi berupa baris bergaris,
+  kartu tanpa bayangan. Semua `border-radius` 10–29px diganti `var(--radius)`.
+- Penyesuaian lain ada di bagian paling akhir CSS: donasi, proyek, ujian, sertifikat, editor (titik "jendela Mac" disembunyikan,
+  tombol Jalankan hijau polos), kalender statistik jadi skala hijau.
+- Warna level di `levels.js` dibuat lebih kalem. Untuk teks berwarna level pakai `--lvl-ink` (dicampur dengan --text agar kontras).
+- **Tahap 2 (penyempurnaan)**, bagian terakhir styles.css: teks bacaan materi memakai serif (`--font-read`, Source Serif 4
+  400–700 + italic), penunjuk tahap materi seperti daftar bab (garis bawah, nomor berbingkai), satu gaya kotak catatan
+  (garis kiri 3px + rona tipis via `--note`) untuk bahasa bayi, kegunaan, tips, contoh kasus, istilah; nomor langkah/konsep
+  berbingkai tipis; konsep pendalaman dipisah garis, bukan kotak; kotak centang bergaya tinta; kode inline rona kertas;
+  kartu proyek bergaris atas tipis; lencana cara-data & tautan ujian di sidebar dibuat kalem.
+- **Tahap 3**, bagian paling akhir styles.css: kuis bergaya lembar soal (pilihan berhuruf A–D berbingkai lingkaran,
+  2 kolom di desktop tanpa pilihan yatim, 1 kolom di HP; penjelasan benar/salah memakai pola `--note`); kotak "Proyek akhir
+  tahap" jadi kotak catatan berwarna level (bukan garis putus-putus); garis putus-putus di kaki kartu jadi garis rambut;
+  strip tahap di HP: penanda aktif garis bawah (bukan balok), tanpa celah kosong, judul satu baris; detail kecil
+  (warna seleksi teks, cincin fokus aksen, `text-wrap: balance` di judul, tombol & textarea radius 6px).
+- **Palet netral (12 November 2026)**: pengguna menolak nuansa krem/coklat. Latar `#f7f8f7` (abu-putih), kartu `#ffffff`,
+  teks `#1a1f1c`, garis `#e3e6e4`, keterangan `#5f6662`; gelap: latar `#121614`, kartu `#1a1f1c`. Aksen hijau tetap.
+  Skill app-theme ikut diperbarui.
+- **Tampilan bersih (tahap 4, 12 November 2026)**: pengguna bilang "kurang clean". Semua font jadi Inter (Source Serif 4
+  dihapus dari index.html), garis ganda di kepala diganti 1px, rona latar di item aktif sidebar & label level dihapus,
+  garis bawah kepala halaman dihapus, chip saring tanpa kotak (aktif = rona aksen tipis), ruang atas lebih lega.
+- **Gaya Preline (tahap 5, 12 November 2026)**: pengguna minta mengikuti preline.co/templates. Lapisan terakhir styles.css:
+  latar putih, kepala aplikasi = panel abu `#f3f4f6` radius 16px, kartu putih border `#e5e7eb` radius 12px + bayangan halus,
+  aksen **biru** `#2563eb` (gelap `#3b82f6` di atas `#171717`), tombol & input radius 8px, chip aktif biru, badge pil,
+  kotak catatan bergaya alert (border penuh + rona), sidebar aktif = latar abu. Skill app-theme ditulis ulang.
+- **Lebih berwarna (tahap 6)**: pengguna bilang "kekurangan warna". Warna level jadi Tailwind 600 (emerald, sky, amber,
+  rose, violet) di levels.js; emoji level/ujian/lanjutkan di ubin berwarna, nomor tahap sidebar berwarna level, kepala
+  detail berona level, label & tombol "Mulai" ujian berwarna level, kepala aplikasi berona biru, kotak catatan beda warna.
+- **Kerapian (tahap 7)**: kepala aplikasi ringkas (class `ringkas` di App.jsx) di semua halaman selain Roadmap; baris filter
+  di Proyek, Algoritma, Kamus diganti satu baris toolbar: kolom cari + dropdown (`.filter-bar`, `.filter-select`); sub-tab Proyek & Ujian jadi
+  kontrol segmented (latar abu, yang aktif kartu putih); kepala statistik & kotak info dirapikan.
+- **Latar abu (tahap 8)**: pengguna bilang "terlalu putih". Latar halaman `#eef0f4`, kartu tetap putih, bilah tab utama
+  jadi kartu putih, kepala aplikasi berona biru sedikit lebih kuat.
+- **Palet Slate + Indigo (tahap 9)**: dipilih pengguna dari 4 pilihan. Latar `#f1f5f9`, teks `#0f172a`, aksen indigo
+  `#4f46e5` (gelap: latar `#0b1120`, kartu `#131c2e`, aksen `#818cf8` dengan teks gelap di atasnya).
+- **Penyempurnaan (tahap 10)**: tab utama aktif = rona indigo (bukan garis bawah); progres di kepala Roadmap dalam panel
+  putih; judul bagian detail tahap seragam + garis pemisah antarbagian; bar progres sidebar disembunyikan bila 0%;
+  materi yang terbuka diberi latar lembut; pilihan kuis ber-hover indigo.
+- **Halaman detail (tahap 11)**: tautan "← Semua …" jadi tombol kecil; kepala detail algoritma & proyek berona warna
+  kategori/level tanpa garis warna di atas (dan bukan kartu di dalam kartu); judul bagian seragam 18px; kotak "Hasil akhir"
+  bergaya alert hijau; panel samping proyek kartu putih; pilihan ujian ber-hover indigo; bar progres pencapaian membulat;
+  kartu donasi berona kuning lembut.
+- **Sidebar (tahap 12)**: di desktop daftar tahap jadi satu kartu navigasi (sticky, bisa digulir sendiri); setiap baris
+  sejajar pada kolom ikon/nomor 28px + teks; grup level dipisah garis tipis; label Beginner/Intermediate jadi lencana kecil;
+  tautan ujian akhir kini baris yang sama bentuknya dengan baris tahap (ikon 🎓 di kotak bergaris putus warna level,
+  judul "Ujian akhir" + keterangan "Level … · lulus ≥ 75%", markup di App.jsx); di HP kepala level di strip disembunyikan; bar progres tahap hanya muncul bila sudah ada kemajuan.
+- **Kepala navy (tahap 13)**: permintaan pengguna — kepala aplikasi navy bergradien (#0b1437 → #172554 → #1e1b4b + rona
+  radial indigo & sky), teks putih, panel progres kaca gelap, bar progres gradien indigo→sky. Satu-satunya gradien di aplikasi. Statistik "5 level · 11 tahap · 97 materi" dibungkus pil kaca transparan.
+- **Daftar langkah (tahap 14)**: judul langkah 16px tebal, keterangan 15px abu (sebelumnya keterangan lebih besar dari
+  judul); jarak antarlangkah seragam 14px; nomor 26px sejajar judul. Paragraf rata kanan-kiri dirapatkan sedikit (word-spacing).
+- **Daftar bernomor seragam (tahap 15)**: semua lingkaran nomor/centang 26px dengan garis 1,5px, jarak ke teks 12px;
+  daftar langkah di kartu "buat datasetmu sendiri" kini juga memakai lingkaran (22px), bukan angka "1."; keterangan butir
+  daftar rata kiri (rata kanan-kiri hanya untuk paragraf) agar jarak antarkata tidak melebar.
+- **Bilah tab (tahap 16)**: semua butir tinggi 38px & huruf 15px yang sama; tombol Cari & Tema jadi tombol polos (tanpa
+  kotak) di kanan, dipisah garis tegak; label Ctrl K berupa lencana kecil; kepala ringkas tidak menampilkan pil statistik.
+- **Aturan**: ikuti skill app-theme (gaya Preline). Jangan kembali ke krem/coklat, serif, atau gradien dekoratif.
+
 ## Belum dilakukan ⏳
 - Belum dicek di browser HP sungguhan / Safari.
 - Penjelasan teks 97 materi belum ditinjau ulang menyeluruh oleh praktisi (kode sudah dites).

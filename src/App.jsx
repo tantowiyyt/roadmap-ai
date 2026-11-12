@@ -236,7 +236,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <header className="hero">
+      <header className={`hero ${page !== 'roadmap' ? 'ringkas' : ''}`}>
         <div className="hero-text">
           <span className="hero-badge">🤖 Belajar AI dalam bahasa Indonesia</span>
           <h1>Roadmap Belajar AI</h1>
@@ -248,11 +248,10 @@ export default function App() {
           </div>
         </div>
         <div className="hero-progress">
-          <ProgressRing pct={totalPct} size={96} stroke={9} />
           <div className="hero-progress-text">
             <span className="hero-progress-title">Progres kamu</span>
-            <strong>{totalDone} / {totalItems}</strong>
-            <span>item selesai</span>
+            <strong>{totalDone} / {totalItems}<small>item selesai · {totalPct}%</small></strong>
+            <span className="hero-bar" role="progressbar" aria-valuenow={totalPct} aria-valuemin={0} aria-valuemax={100} aria-label="Progres keseluruhan"><i style={{ width: `${totalPct}%` }} /></span>
             <a className={`hero-streak ${streak.hariIniAktif ? 'aktif' : ''}`} href="#/ujian/statistik"
               title={streak.sekarang === 0 ? 'Belajar hari ini untuk memulai streak' : streak.hariIniAktif ? 'Streak terjaga hari ini' : 'Belajar hari ini agar streak tidak putus'}>
               🔥 {streak.sekarang > 0 ? `${streak.sekarang} hari beruntun` : 'Mulai streak hari ini'}{streak.sekarang > 0 && !streak.hariIniAktif ? ' · lanjutkan hari ini' : ''}
@@ -333,7 +332,13 @@ export default function App() {
                       </button>
                     )
                   })}
-                  <a className="level-ujian" href={`#/ujian/${level.id}`}>🎓 Ujian akhir level {level.name}</a>
+                  <a className="level-ujian" href={`#/ujian/${level.id}`}>
+                    <span className="ujian-num" aria-hidden>🎓</span>
+                    <span className="phase-info">
+                      <span className="phase-title">Ujian akhir</span>
+                      <span className="muted small">Level {level.name} · lulus ≥ 75%</span>
+                    </span>
+                  </a>
                 </div>
               ))}
             </nav>
