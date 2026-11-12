@@ -1,0 +1,77 @@
+Roadmap Belajar AI
+Hak cipta (c) 2026 tantowiyyt — https://github.com/tantowiyyt/roadmap-ai
+
+Proyek ini memakai DUA lisensi:
+
+  1. KODE PROGRAM  → Lisensi MIT
+  2. ISI MATERI    → Creative Commons BY-NC-SA 4.0 + ketentuan tambahan donasi
+
+==============================================================================
+Ringkasan dalam bahasa Indonesia (bukan pengganti teks lisensi resmi di bawah)
+==============================================================================
+
+Yang termasuk "kode program": file JavaScript/JSX/CSS/HTML yang membentuk aplikasi
+(misalnya src/components/, src/pages/, src/animations/, src/*.js, public/, index.html,
+vite.config.js), KECUALI teks materi yang disebut di bawah.
+
+Yang termasuk "isi materi": semua teks pembelajaran, penjelasan, contoh kasus,
+contoh kode pembelajaran, latihan, soal kuis & ujian, istilah kamus, versi bahasa bayi,
+dan ide proyek — terutama isi folder src/data/.
+
+Kode program (MIT): boleh dipakai, diubah, dan dipakai untuk apa saja, termasuk komersial,
+asalkan pemberitahuan hak cipta dan lisensi ini tetap disertakan.
+
+Isi materi (CC BY-NC-SA 4.0): boleh disalin, dibagikan, dan diubah, asalkan:
+  - BY : mencantumkan nama "tantowiyyt" dan tautan ke sumber asli;
+  - NC : TIDAK untuk tujuan komersial (misalnya tidak dijual sebagai kursus/e-book berbayar,
+         tidak dipasang di balik paywall);
+  - SA : hasil turunannya dibagikan dengan lisensi yang sama.
+
+Ketentuan tambahan tentang donasi dan uang (berlaku untuk salinan, fork, atau turunan
+yang memuat isi materi):
+  - Salinan/turunan TIDAK BOLEH dipakai untuk mengumpulkan donasi, sponsor, atau uang
+    dalam bentuk apa pun atas nama penyalin. Tombol/kartu donasi (Saweria) harus dihapus,
+    atau tetap mengarah ke donasi pemilik asli: https://saweria.co/tantowiyyt
+  - Mengganti tujuan donasi dengan akun lain dianggap penggunaan komersial (melanggar NC).
+  - Salinan yang ditampilkan sebagai situs web wajib menyebutkan dengan jelas bahwa isinya
+    berasal dari "Roadmap Belajar AI oleh tantowiyyt" beserta tautan ke sumber asli.
+
+Pemilik hak cipta (tantowiyyt) tidak terikat oleh batasan di atas dan tetap boleh
+menerima donasi atau memakai karyanya untuk tujuan apa pun.
+
+Ingin memakai isi materi untuk keperluan komersial atau di luar ketentuan ini?
+Hubungi pemilik lewat https://github.com/tantowiyyt untuk meminta izin.
+
+==============================================================================
+1. LISENSI MIT (kode program)
+==============================================================================
+
+Copyright (c) 2026 tantowiyyt
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+==============================================================================
+2. CREATIVE COMMONS ATTRIBUTION-NONCOMMERCIAL-SHAREALIKE 4.0 (isi materi)
+==============================================================================
+
+Isi materi dilisensikan di bawah Creative Commons Attribution-NonCommercial-ShareAlike
+4.0 International (CC BY-NC-SA 4.0), ditambah ketentuan donasi di atas.
+
+Teks lisensi lengkap: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+Ringkasan:            https://creativecommons.org/licenses/by-nc-sa/4.0/deed.id
