@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import Ikon from './Ikon.jsx'
 import { createPortal } from 'react-dom'
 import { roadmap } from '../roadmap.js'
 import { algorithms } from '../data/algorithms.js'
@@ -111,7 +112,7 @@ export function TombolCari({ onBuka }) {
   const mac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)
   return (
     <button type="button" className="tombol-cari" onClick={onBuka} aria-label="Cari materi, algoritma, istilah, proyek" title={`Cari (${mac ? '⌘' : 'Ctrl'}+K atau /)`}>
-      <span aria-hidden>🔍</span> <span className="tc-label">Cari</span>
+      <Ikon nama="cari" /> <span className="tc-label">Cari</span>
       <kbd className="tc-kbd" aria-hidden>{mac ? '⌘' : 'Ctrl'} K</kbd>
     </button>
   )

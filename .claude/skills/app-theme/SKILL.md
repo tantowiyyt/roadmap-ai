@@ -52,8 +52,10 @@ letter-spacing -0.015em. Ukuran pakai token `--fs-*` (12/13/14/15/16/17/18/22/26
 - **Kepala aplikasi** (`.hero`): panel **navy bergradien** (permintaan pengguna): `linear-gradient(135deg, #0b1437, #172554, #1e1b4b)`
   + dua rona radial lembut (indigo kanan atas, sky kiri bawah); teks putih, keterangan slate 78%; panel progres kaca gelap
   `rgb(255 255 255 / .07)`; isi bar progres gradien indigo→sky. Radius 16px. Sama di mode terang & gelap.
-- **Bilah tab utama** berupa kartu putih (border + `--shadow-xs`); semua butir 38px, huruf `--fs-body`; Cari & Tema = tombol
-  polos di kanan setelah garis tegak tipis. **Tab utama**: teks abu, radius 8px; yang aktif = latar `--accent-soft` + teks aksen (tanpa garis bawah). **Sub-tab** (`.subtabs`): kontrol segmented —
+- **Kepala + bilah tab = satu blok navy** di desktop (tanpa jarak, dipisah garis `rgb(255 255 255 / .10)`).
+- **Bilah tab utama** senada dengan kepala: gradien navy yang sama, teks `rgb(226 232 240 / .72)`, tab aktif pil kaca
+  `rgb(255 255 255 / .14)` + garis bawah `#818cf8`; semua butir 38px, huruf `--fs-body`; Cari & Tema = tombol
+  polos di kanan setelah garis tegak tipis. Di desktop tab dibagi rata (`flex: 1 1 0`); tombol tema hanya ikon 38px. **Tab utama**: teks abu, radius 8px; yang aktif = latar `--accent-soft` + teks aksen (tanpa garis bawah). **Sub-tab** (`.subtabs`): kontrol segmented —
   latar `--surface`, radius 8px, yang aktif = latar kartu + `--shadow-xs`.
 - **Filter**: satu baris toolbar `.filter-bar` = kolom cari (melebar) + dropdown `<select className="filter-select">`
   (Level / Kategori / Sumber data). Jangan kembali ke baris-baris chip yang memecah ke beberapa baris.
@@ -67,7 +69,8 @@ letter-spacing -0.015em. Ukuran pakai token `--fs-*` (12/13/14/15/16/17/18/22/26
   contoh kasus violet, istilah sky. Kepala aplikasi berona biru lembut (bagian "Lebih berwarna (tahap 6)").
   Teks berwarna level pakai `--lvl-ink`.
 - Warna animasi algoritma (`--s1..3`, `--anim-bg`) adalah palet aman buta warna — **jangan diubah**.
-  Editor kode selalu gelap (`src/components/editorTheme.js`). Emoji tetap dipakai (pilihan pengguna).
+  Editor kode selalu gelap (`src/components/editorTheme.js`). Emoji tetap dipakai di isi halaman (pilihan pengguna), **kecuali di bilah tab / Cari / Tema**: di sana
+  pakai ikon garis `<Ikon nama="…" />` (`src/components/Ikon.jsx`) supaya menu satu gaya ("vibe antar menu berbeda").
 
 - **Tautan kembali** (`.back`): tombol kecil putih ber-border. **Kepala halaman detail** (`.algo-hero`, `.proyek-hero`):
   rona `--cat`/`--lvl` 6%, tanpa garis warna di atas, tidak berupa kartu di dalam kartu.

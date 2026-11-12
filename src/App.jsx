@@ -1,4 +1,5 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import Ikon from './components/Ikon.jsx'
 import { roadmap, roadmapByLevel, totalItems } from './roadmap.js'
 import Lesson from './components/Lesson.jsx'
 import Quiz from './components/Quiz.jsx'
@@ -72,7 +73,7 @@ function TombolTema() {
   const ganti = () => { pasangTema(berikut.id); setTema(berikut.id) }
   return (
     <button className="tombol-tema" onClick={ganti} title={`Tema: ${kini.label}. Klik untuk ${berikut.label}`} aria-label={`Tema ${kini.label}, ganti ke ${berikut.label}`}>
-      <span aria-hidden>{kini.ikon}</span> <span className="tema-label">{kini.label}</span>
+      <Ikon nama={kini.id} /> <span className="tema-label">{kini.label}</span>
     </button>
   )
 }
@@ -263,12 +264,12 @@ export default function App() {
 
       <div className="cari-baris-hp"><TombolCari onBuka={bukaCari} /></div>
       <nav className="tabs">
-        <a href="#/roadmap" className={page === 'roadmap' ? 'active' : ''}>🗺️ Roadmap</a>
-        <a href="#/algoritma" className={page === 'algoritma' ? 'active' : ''}>🧠 Algoritma</a>
-        <a href="#/proyek" className={page === 'proyek' ? 'active' : ''}>🛠️ Proyek</a>
-        <a href="#/ujian" className={page === 'ujian' ? 'active' : ''}>🎓 Ujian{jatuhTempo > 0 && <span className="badge-angka" title={`${jatuhTempo} soal perlu diulang hari ini`}>{jatuhTempo}</span>}</a>
-        <a href="#/kamus" className={page === 'kamus' ? 'active' : ''}>📖 Kamus</a>
-        <a href="#/playground" className={page === 'playground' ? 'active' : ''}>🧪 Playground</a>
+        <a href="#/roadmap" className={page === 'roadmap' ? 'active' : ''}><Ikon nama="roadmap" /> Roadmap</a>
+        <a href="#/algoritma" className={page === 'algoritma' ? 'active' : ''}><Ikon nama="algoritma" /> Algoritma</a>
+        <a href="#/proyek" className={page === 'proyek' ? 'active' : ''}><Ikon nama="proyek" /> Proyek</a>
+        <a href="#/ujian" className={page === 'ujian' ? 'active' : ''}><Ikon nama="ujian" /> Ujian{jatuhTempo > 0 && <span className="badge-angka" title={`${jatuhTempo} soal perlu diulang hari ini`}>{jatuhTempo}</span>}</a>
+        <a href="#/kamus" className={page === 'kamus' ? 'active' : ''}><Ikon nama="kamus" /> Kamus</a>
+        <a href="#/playground" className={page === 'playground' ? 'active' : ''}><Ikon nama="playground" /> Playground</a>
         <span className="tabs-ujung">
           <span className="cari-di-tab"><TombolCari onBuka={bukaCari} /></span>
           <TombolTema />

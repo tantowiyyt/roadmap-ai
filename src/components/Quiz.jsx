@@ -13,8 +13,14 @@ export default function Quiz({ questions, sumber = '' }) {
       {questions.map((q, i) => {
         const chosen = answers[i]
         return (
-          <div key={i} className="quiz-q">
-            <p><strong>{i + 1}.</strong> <RichText text={q.q} /></p>
+          <div key={i} className={`quiz-q ${chosen === undefined ? '' : chosen === q.answer ? 'benar' : 'salah'}`}>
+            <div className="quiz-q-head">
+              <span className="quiz-no">Soal {i + 1} <span className="muted">/ {questions.length}</span></span>
+              {chosen !== undefined && (
+                <span className={`quiz-status ${chosen === q.answer ? 'right' : 'wrong'}`}>{chosen === q.answer ? 'Benar' : 'Salah'}</span>
+              )}
+            </div>
+            <p className="quiz-tanya"><RichText text={q.q} /></p>
             <div className="quiz-options">
               {q.options.map((opt, j) => {
                 let cls = ''
@@ -35,18 +41,18 @@ export default function Quiz({ questions, sumber = '' }) {
               })}
             </div>
             {chosen !== undefined && (
-              <p className={`quiz-why ${chosen === q.answer ? 'right' : 'wrong'}`}>
-                {chosen === q.answer ? '✅ Benar! ' : '❌ Kurang tepat. '}
-                {q.why}
-                {chosen !== q.answer && <span className="quiz-ulang"> Soal ini masuk 🧠 Ulang soal.</span>}
-              </p>
+              <div className={`quiz-why ${chosen === q.answer ? 'right' : 'wrong'}`}>
+                <strong className="quiz-why-judul">{chosen === q.answer ? '✅ Benar!' : '❌ Kurang tepat'}</strong>
+                <p>{q.why}</p>
+                {chosen !== q.answer && <p className="quiz-ulang">🧠 Soal ini masuk daftar Ulang soal.</p>}
+              </div>
             )}
           </div>
         )
       })}
       {answered > 0 && (
         <div className="quiz-score">
-          <span>Skor: <strong>{correct}/{questions.length}</strong></span>
+          <span>Skor kamu: <strong>{correct}/{questions.length}</strong> <span className="muted">· {answered} dari {questions.length} soal dijawab</span></span>
           <button onClick={() => setAnswers({})}>Ulangi kuis</button>
         </div>
       )}

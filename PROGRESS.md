@@ -367,6 +367,17 @@ _Terakhir diperbarui: 12 November 2026_
   daftar rata kiri (rata kanan-kiri hanya untuk paragraf) agar jarak antarkata tidak melebar.
 - **Bilah tab (tahap 16)**: semua butir tinggi 38px & huruf 15px yang sama; tombol Cari & Tema jadi tombol polos (tanpa
   kotak) di kanan, dipisah garis tegak; label Ctrl K berupa lencana kecil; kepala ringkas tidak menampilkan pil statistik.
+- **Bilah tab (tahap 17)**: di desktop keenam tab dibagi rata selebar bilah (teks di tengah); tombol tema jadi tombol ikon
+  persegi 38px (label tetap terbaca pembaca layar).
+- **Ikon menu seragam (tahap 18)**: emoji di bilah tab, tombol Cari, dan tombol Tema diganti ikon garis gaya Lucide
+  (`src/components/Ikon.jsx`, warna mengikuti teks) agar semua menu satu gaya. Emoji di isi halaman tetap dipakai.
+- **Bilah tab navy (tahap 19)**: bilah tab memakai gradien navy yang sama dengan kepala aplikasi; teks putih redup,
+  tab aktif = pil kaca terang dengan garis bawah indigo muda; lencana Ctrl K & garis pemisah transparan.
+- **Kepala + menu satu blok (tahap 20)**: di desktop kepala navy dan bilah tab menyatu (sudut bawah kepala & sudut atas
+  bilah tab lurus, dipisah garis tipis transparan, satu bayangan di bawah). Di HP tetap terpisah oleh kotak cari.
+- **Kuis (tahap 21)**: tiap soal jadi kartu sendiri dengan kepala "SOAL n / N" + lencana Benar/Salah, pertanyaan tebal,
+  pilihan A–D dua kolom sejajar tengah (pilihan lain diredupkan setelah menjawab), umpan balik = judul + penjelasan +
+  catatan Ulang soal kecil, skor di kotak abu bawah. Markup diubah di `src/components/Quiz.jsx`.
 - **Aturan**: ikuti skill app-theme (gaya Preline). Jangan kembali ke krem/coklat, serif, atau gradien dekoratif.
 
 ## Belum dilakukan ⏳
